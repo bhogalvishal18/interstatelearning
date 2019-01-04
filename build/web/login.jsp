@@ -1,0 +1,141 @@
+<%-- 
+    Document   : login
+    Created on : Jan 4, 2019, 10:08:46 PM
+    Author     : Vishal
+--%>
+
+<%@page import="java.util.Properties"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import = "java.util.ResourceBundle" %>
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="source/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="source/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="source/libs/css/style.css">
+    <link rel="stylesheet" href="../source/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
+    <%
+                    String baseurl="";
+                    String name="";
+                    String path="";
+                     try
+              {
+     Properties prop = new Properties();
+     //name=prop.load(getClass().getResourceAsStream()); 
+     path=this.getClass().getClassLoader().getResource("").getPath();
+     InputStream stream = new FileInputStream(path+"/property/URL.properties");
+     prop.load(stream);
+    baseurl=prop.getProperty("baseurl");
+    System.out.println(baseurl);
+       }catch(Exception e)
+       {
+           out.print(e);
+       }
+                    
+                  
+                    %>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+   <script type="text/javascript">
+    var frm = $('#login');
+
+    frm.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: "<%=baseurl%>/rest/user/login",
+            data: frm.serialize(),
+            success: function (data,status) {
+                alert(data+" status"+status);
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            }, 
+        });
+    });
+   
+
+</script> 
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="index.jsp"><img class="logo-img" src="source/images/company.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-body">
+                
+                
+                    <form  id="login" action="" method="POST">
+                    
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="username" name="username" type="text" placeholder="Username" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" id="password" name="password" type="password" placeholder="Password">
+                    </div>
+                     <div class="form-group">
+<!--                        <input class="form-control form-control-lg" id="password" type="select" placeholder="Password">-->
+                        <select name="account_type" class="form-control form-control-lg">
+  <option value="admin">Admin</option>
+  <option value="user">User</option>
+
+                  </select> 
+                     </div>
+<!--                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
+                        </label>
+                    </div>-->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                </form>
+            </div>
+            <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="register.jsp" class="footer-link">Create An Account</a></div>
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- end login page  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="source/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="source/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+ 
+</html>
