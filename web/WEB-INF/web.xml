@@ -40,6 +40,10 @@
         <servlet-name>EditProfileDetail</servlet-name>
         <servlet-class>com.bhogal.EditProfileDetail</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddBankDetails</servlet-name>
+        <servlet-class>com.bhogal.AddBankDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginValidate</servlet-name>
         <url-pattern>/loginvalidate</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>EditProfileDetail</servlet-name>
         <url-pattern>/editprofiledetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddBankDetails</servlet-name>
+        <url-pattern>/addbankdetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

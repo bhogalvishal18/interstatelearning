@@ -43,7 +43,7 @@
 	 
 </head>
 
-<body onload="alertMessage()">
+<body>
     <!-- ============================================================== -->
     <!-- login page  -->
     <!-- ============================================================== -->
@@ -53,7 +53,7 @@
             <div class="card-body">
                 
                 
-                    <form  name="login" action="loginvalidate"  method="POST">
+                    <form  name="log" action="loginvalidate"  method="POST">
                     
                     <div class="form-group">
                         <input class="form-control form-control-lg" id="username" name="username" type="text" placeholder="Username" autocomplete="off" required="">
@@ -95,20 +95,7 @@
     <script src="source/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
 <script type="text/javascript">
-    function  alertMessage()
-    {
-    
-            <%  
-    String message=(String)request.getAttribute("message");
-   out.print(message);
-    %>
-            var message=<%=message%>
-            if(typeof message === "undefined")
-            alert("undined");
-        else
-            alert(message);
-}
-    
+ 
 </script>
 </body>
  

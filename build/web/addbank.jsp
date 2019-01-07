@@ -10,6 +10,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +37,16 @@
 </head>
 <body>
     <!-- Left Panel -->
-
+<%
+            HttpSession sessions = request.getSession(true);
+            String user=(String)sessions.getAttribute("username");
+            String sess=(String)sessions.getAttribute("session");
+            if(user==null&&sess==null)
+            {
+              response.sendRedirect("login");
+            }
+           
+            %>
   <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -270,7 +280,7 @@
 						 <div class="card-title">
                                             <h3 class="text-center">Pay Invoice</h3>
                                         </div>
-                            <form action="#" method="post" class="">
+                            <form action="addbankdetails" method="post" class="">
 							    <div class="form-group text-center">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
@@ -282,6 +292,9 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                        <input type="hidden" id="username" name="username" value="<%=user%>">
+                                        <input type="hidden" id="session" name="session" value="<%=sess%>">
+                                        
                                         <input type="text" id="bankname" name="bankname" placeholder="Bank Name" class="form-control">
                                     </div>
                                 </div>
@@ -310,18 +323,15 @@
                                         <input type="text" id="branch" name="branch" placeholder="Branch" class="form-control">
                                     </div>
                                 </div>
-								   <div class="form-group">
+                               			   <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                                         <input type="text" id="branch_code" name="branch_code" placeholder="Branch Code" class="form-control">
                                     </div>
                                 </div>
-								 
-									 <div class="form-group">
+								   <div class="form-group">
                                     <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-globe"></i></div>
-										
-                                        <select data-placeholder="Account Type" class="form-control" tabindex="1">
+                                        <select data-placeholder="Account Type" name="bank_account_type" class="form-control" tabindex="1">
                                 <option value="" label="default">Account Type</option>
                                 <option value="India">Current</option>
 								 <option value="India">Saving</option>

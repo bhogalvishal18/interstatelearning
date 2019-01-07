@@ -20,6 +20,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Interstatelearning</title>
@@ -41,7 +42,15 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <script type="text/javascript">
+     
 
+
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode
+    return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+        </script>
 </head>
 <body>
     <!-- Left Panel -->
@@ -289,7 +298,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input type="text" id="username" name="username" placeholder="<%= user%>" class="form-control" readonly>
+                                        <input type="text" id="username" value="<%= user%>" name="username" placeholder="<%= user%>" class="form-control" readonly>
                                         <input type="hidden" id="session" name="session" value="<%=sess%>">
                                     </div>
                                 </div>
@@ -368,7 +377,7 @@
     <option value="Sikkim">Sikkim</option>
     <option value="Tamil Nadu">Tamil Nadu</option>
     <option value="Tripura">Tripura</option>
-    <option value="Uttaranchal">Uttaranchal</option>
+    <option value="Uttarakhand">Uttarakhand</option>
     <option value="Uttar Pradesh">Uttar Pradesh</option>
     <option value="West Bengal">West Bengal</option>
     </select>
@@ -383,7 +392,7 @@
 								   <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                                        <input type="text" id="pincode" name="pincode" placeholder="Pincode" class="form-control">
+                                        <input type="text" id="pincode"  name="pincode" placeholder="Pincode" class="form-control">
                                     </div>
                                 </div>
 							
@@ -392,7 +401,7 @@
 								   <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
-                                        <input type="mobile" id="mobile" name="mobile" placeholder="Mobile" class="form-control">
+                                        <input type="text" onkeypress="return validateNumber(event);" id="mobile" size="5" maxlength="10"  name="mobile" placeholder="Mobile" class="form-control">
                                     </div>
                                 </div>
 								

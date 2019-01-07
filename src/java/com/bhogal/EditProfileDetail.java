@@ -91,6 +91,7 @@ public class EditProfileDetail extends HttpServlet {
         String city=request.getParameter("city");
         String pincode=request.getParameter("pincode");
         String mobile=request.getParameter("mobile");
+        System.err.println("---"+user+"---"+sess+"----"+firstname+"-----"+lastname+"----"+address+"----"+country);
         if(user!=null)
         {
              String baseurl="";
@@ -145,15 +146,15 @@ input.close();
        
         if(result.equals("true"))
         {
-        String username = (String) jo.get("username"); 
-        
-        
-       
- 
+        String username = (String) jo.get("username");     
 HttpSession sessions = request.getSession(false);
 sessions.setAttribute("session", sess);
 sessions.setAttribute("username", username);
-       response.sendRedirect("editprofile");
+       response.sendRedirect("viewprofile");
+        }
+        else
+        {
+          response.sendRedirect("editprofile");  
         }
         }catch(Exception e)
         {

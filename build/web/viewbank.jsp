@@ -4,6 +4,17 @@
     Author     : Vishal
 --%>
 
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="org.json.simple.parser.JSONParser"%>
+<%@page import="java.io.DataInputStream"%>
+<%@page import="java.io.DataOutputStream"%>
+<%@page import="java.io.DataOutputStream"%>
+<%@page import="java.net.HttpURLConnection"%>
+<%@page import="java.net.URL"%>
+<%@page import="java.nio.charset.StandardCharsets"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.util.Properties"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -36,7 +47,113 @@
 </head>
 <body>
     <!-- Left Panel -->
+<%
+            HttpSession sessions = request.getSession(true);
+            String user=(String)sessions.getAttribute("username");
+            String sess=(String)sessions.getAttribute("session");
+            if(user==null&&sess==null)
+            {
+              response.sendRedirect("login");
+            }
+//start
+String baseurl="";
+            String username="";
+            String bank_name="";
+            String account_no="";
+            String ifsc_code="";
+            String branch="";
+            String branch_code="";
+            String bank_account_type="";
+            try
+              {
+     Properties prop = new Properties();
+     //name=prop.load(getClass().getResourceAsStream()); 
+     String path=this.getClass().getClassLoader().getResource("").getPath();
+     InputStream stream = new FileInputStream(path+"/property/URL.properties");
+     prop.load(stream);
+    baseurl=prop.getProperty("baseurl");
+    System.out.println(baseurl);
+    
+    //start
+     StringBuffer sb = new StringBuffer();
+      
+          String url_path=baseurl+"/rest/user/getbankdetails";
+        System.out.println(url_path);
+        
+        String urlParameters  = "username="+user+"&session_id="+sess;
+byte[] postData       = urlParameters.getBytes(StandardCharsets.UTF_8 );
+int    postDataLength = postData.length;
 
+URL    url            = new URL( url_path );
+HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
+conn.setDoOutput( true );
+conn.setInstanceFollowRedirects( false );
+conn.setRequestMethod( "POST" );
+conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
+conn.setRequestProperty( "charset", "utf-8");
+conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+conn.setUseCaches( false );
+try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+   wr.write( postData );
+}
+        DataInputStream input = new DataInputStream( conn.getInputStream() ); 
+
+
+
+for( int c = input.read(); c != -1; c = input.read() ) 
+sb.append((char)c ); 
+input.close(); 
+               
+
+
+ Object obj = new JSONParser().parse(sb.toString()); 
+          
+        // typecasting obj to JSONObject 
+        JSONObject jo = (JSONObject) obj; 
+          
+        // getting firstName and lastName 
+        String result = (String) jo.get("result"); 
+        String message = (String) jo.get("message"); 
+        System.out.println("--"+result);
+        if(result.equals("true"))
+        {
+        username = (String) jo.get("username");
+        bank_name=(String)jo.get("bank_name");
+        account_no=(String)jo.get("account_no");
+        ifsc_code=(String)jo.get("ifsc_code");
+        branch=(String)jo.get("branch");
+        branch_code=(String)jo.get("branch_code");
+        bank_account_type=(String)jo.get("bank_account_type");
+        
+        
+        if(bank_name==null&&account_no==null&&ifsc_code==null&&branch==null&&branch_code==null&&bank_account_type==null)
+        {
+          bank_name="";
+          account_no="";
+          ifsc_code="";
+          branch="";
+          branch_code="";
+          bank_account_type="";
+          
+        }
+        }
+        else
+        {
+
+        }
+   }catch(Exception e)
+       {
+           System.out.println(e);
+       }     
+     
+
+//end
+
+
+
+
+
+            %>
   <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -283,23 +400,23 @@
 											       <ul class="list-group list-group-flush">
 
                                     <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-envelope"></i> Bank Name: </a>
+                                        <a href="#"> <i class="fa fa-envelope"></i> Bank Name: <%=bank_name%></a>
                                     </li>
 									 <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-globe"></i> Account No: </a>
+                                                                             <a href="#"> <i class="fa fa-globe"></i> Account No: <%=account_no%></a>
                                     </li>
 									 <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-location-arrow"></i> IFSC code: </a>
+                                                                             <a href="#"> <i class="fa fa-location-arrow"></i> IFSC code: <%=ifsc_code%></a>
                                     </li>
 									 <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-map-marker"></i> Branch:</a>
+                                                                             <a href="#"> <i class="fa fa-map-marker"></i> Branch:<%=branch%></a>
                                     </li>
 									
 									 <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-asterisk"></i> Branch code: </a>
+                                                                             <a href="#"> <i class="fa fa-asterisk"></i> Branch code: <%=branch_code%></a>
                                     </li>
 									 <li class="list-group-item">
-                                        <a href="#"> <i class="fa fa-mobile"></i> Account type: </a>
+                                                                             <a href="#"> <i class="fa fa-mobile"></i> Account type: <%=bank_account_type%></a>
                                     </li>
                                 </ul>
                                 

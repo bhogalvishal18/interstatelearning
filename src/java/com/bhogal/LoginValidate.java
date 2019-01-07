@@ -76,6 +76,9 @@ public class LoginValidate extends HttpServlet {
         String user=request.getParameter("username");
         String pass=request.getParameter("password");
         String account=request.getParameter("account_type");
+        
+        
+        
         if(user!=null &&pass!=null &&account!=null)        
         {
             System.out.println("----"+user+"----"+pass+"---"+account);
