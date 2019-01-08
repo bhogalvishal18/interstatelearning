@@ -37,6 +37,10 @@
         <jsp-file>/viewbank.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <jsp-file>/logout.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>EditProfileDetail</servlet-name>
         <servlet-class>com.bhogal.EditProfileDetail</servlet-class>
     </servlet>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>ViewBank</servlet-name>
         <url-pattern>/viewbank</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditProfileDetail</servlet-name>
