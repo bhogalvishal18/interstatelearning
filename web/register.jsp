@@ -46,7 +46,7 @@
         <div class="card ">
             <div class="card-header text-center"><a href="index.jsp"><img class="logo-img" src="source/images/company.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
-                <form name="registervalidate" action="register"  method="POST">
+                <form name="register" action="registervalidate"  method="POST">
                     <div class="form-group">
                         <input class="form-control form-control-lg" id="username" name="username" type="text" placeholder="Username" autocomplete="off" required="">
                     </div>

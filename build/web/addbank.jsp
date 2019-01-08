@@ -33,7 +33,39 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/jquery-1.4.1-vsdoc.js"></script>
+<script src="https://code.jquery.com/jquery-1.4.1.js" integrity="sha256-ntyfgTeB7KKq1t5474XNvpLuMrsKVnkb5NoPp7Rywdg=" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+    
+         $(document).ready(function () {
+             
+         $('.numeric').live('keydown', function (e) {
+                if (e.keyCode == 8 || e.keyCode == 46 || e.keyCode == 37 || e.keyCode == 39) {
+               return true;
+               }
+                if (parseInt(e.keyCode) > 47 && parseInt(e.keyCode) < 58) {
+                    if (parseInt($(this).val().length) <= 16) {
 
+                    }
+                    else {
+                        e.preventDefault();
+                    }
+                }
+                else {
+                    e.preventDefault();
+                }
+            });
+        });
+
+    
+    </script>
 </head>
 <body>
     <!-- Left Panel -->
@@ -308,7 +340,7 @@
 								   <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input type="text" id="account_no" name="account_no" placeholder="Account No." class="form-control">
+                                        <input type="text" id="account_no" name="account_no" placeholder="Account No." class="numeric form-control">
                                     </div>
                                 </div>
 								   <div class="form-group">
@@ -374,12 +406,7 @@
 
 <!-- Right Panel -->
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
-<script src="assets/js/main.js"></script>
+
 
 
 </body>

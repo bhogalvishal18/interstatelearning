@@ -59,12 +59,12 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="indexy.html">Home</a></li>
-                                <li><a href="tour.html">Tour</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="login.jsp">Login</a></li>
-								  <li><a href="register.jsp">Register</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Tour</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="login">Login</a></li>
+				<li><a href="register">Register</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                         <!--/.nav-collapse -->
@@ -88,11 +88,11 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="indexy.html">Home</a></li>
-                                <li><a href="tour.html">Tour</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Tour</a></li>
                               <li><a href="login">Login</a></li>
-								  <li><a href="register">Register</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+				 <li><a href="register">Register</a></li>
+                                <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                         <!--/.nav-collapse -->
