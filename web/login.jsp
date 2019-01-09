@@ -62,13 +62,10 @@
                         <input class="form-control form-control-lg" id="password" name="password" type="password" placeholder="Password" required="">
                     </div>
                      <div class="form-group">
-<!--                        <input class="form-control form-control-lg" id="password" type="select" placeholder="Password">-->
-<select name="account_type" class="form-control form-control-lg" required="">
-  <option value="admin">Admin</option>
-  <option value="user">User</option>
-
-                  </select> 
-                     </div>
+                          <div class="form-group">
+                        <input class="form-control form-control-lg" id="account_type" name="account_type" type="hidden" value="user" >
+                    </div>
+                   
 <!--                    <div class="form-group">
                         <label class="custom-control custom-checkbox">
                             <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
