@@ -141,24 +141,26 @@ input.close();
         // getting firstName and lastName 
         String result = (String) jo.get("result"); 
         String message = (String) jo.get("message"); 
-                  System.out.println("--"+result);
+                ////  System.out.println("--"+result);
         if(result.equals("true"))
         {
         String username = (String) jo.get("username"); 
         String session = (String) jo.get("session"); 
         
-       System.out.println("----"+result+"-----"+username+"----"+session+"----"+message);
+      // System.out.println("----"+result+"-----"+username+"----"+session+"----"+message);
        
       request.setAttribute("username",username);
    request.setAttribute("session",session);
-RequestDispatcher dispatcher = request.getRequestDispatcher("/home.jsp");
+RequestDispatcher dispatcher = request.getRequestDispatcher("home");
 dispatcher.forward( request, response );
        
         }
         else
         {
-            System.out.println("Already Registered"); 
-            response.sendRedirect("register.jsp");
+           // System.out.println("Already Registered"); 
+              request.setAttribute("message",message);
+RequestDispatcher dispatcher = request.getRequestDispatcher("register");
+dispatcher.forward( request, response );
         }
    }catch(Exception e)
        {
@@ -167,7 +169,7 @@ dispatcher.forward( request, response );
         }
         else
         {
-          response.sendRedirect("register.jsp");
+          response.sendRedirect("register");
         }
         
         
