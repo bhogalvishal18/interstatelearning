@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Interstatelearning</title>
+    <title>Wisdommani</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -80,6 +80,8 @@
             HttpSession sessions = request.getSession(true);
             String user=(String)sessions.getAttribute("username");
             String sess=(String)sessions.getAttribute("session");
+            String refer_code=(String)sessions.getAttribute("refer_code");
+            
             if(user==null&&sess==null)
             {
               response.sendRedirect("login");
@@ -100,8 +102,8 @@
                         <ul class="sub-menu children dropdown-menu">                            
 						<li><i class="fa fa-puzzle-piece"></i><a href="editprofile">Edit Profile</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="viewprofile">View Profile</a></li>
-                            <!--<li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-
+                           
+<!--
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
                             <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
                             <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
@@ -118,6 +120,13 @@
                             <li><i class="fa fa-table"></i><a href="viewbank">View Bank Details</a></li>
                         </ul>
                     </li>
+                    
+                     
+                     <li class="menu-item-has-children ">
+                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#staticModal" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-share"></i>Referral Code</a>
+                       
+                    </li>
+                     
                    <!-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -277,6 +286,37 @@
         <!-- /#header -->
         <!-- Content -->
         <div class="content">
+            <!-- modelstart -->
+             <div class="animated">
+
+            <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticModalLabel">Referral Code</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                            <center><b><%=refer_code %></b></center>
+                           </p>
+                       </div>
+                       <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+<!--                        <button type="button" class="btn btn-primary">Confirm</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div><!-- .animated -->
+    
+    <!-- modelbox end -->
+            
             <!-- Animated -->
             <div class="animated fadeIn">
                 <!-- Widgets  -->
@@ -290,8 +330,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text">$<span class="count">23569</span></div>
-                                            <div class="stat-heading">Revenue</div>
+                                            <div class="stat-text">₹<span class="count">0</span></div>
+                                            <div class="stat-heading">Total Earning</div>
                                         </div>
                                     </div>
                                 </div>
@@ -299,7 +339,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                 <!--   <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-five">
@@ -315,9 +355,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  -->
 
-                    <div class="col-lg-3 col-md-6">
+                 <!--   <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-five">
@@ -333,7 +373,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>   -->
 
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
@@ -344,8 +384,8 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
-                                            <div class="stat-heading">Clients</div>
+                                            <div class="stat-text"><span class="count">0</span></div>
+                                            <div class="stat-heading">Referral Applied</div>
                                         </div>
                                     </div>
                                 </div>
@@ -357,14 +397,14 @@
                 <!--  Traffic  -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card">
+<!--                        <div class="card">
                             <div class="card-body">
                                 <h4 class="box-title">Traffic </h4>
                             </div>
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="card-body">
-                                        <!-- <canvas id="TrafficChart"></canvas>   -->
+                                         <canvas id="TrafficChart"></canvas>   
                                         <div id="traffic-chart" class="traffic-chart"></div>
                                     </div>
                                 </div>
@@ -398,17 +438,17 @@
                                                 <div class="progress-bar bg-flat-color-4" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
-                                    </div> <!-- /.card-body -->
+                                    </div>  /.card-body 
                                 </div>
-                            </div> <!-- /.row -->
+                            </div>  /.row 
                             <div class="card-body"></div>
                         </div>
-                    </div><!-- /# column -->
-                </div>
+                    </div> /# column 
+                </div>-->
                 <!--  /Traffic -->
                 <div class="clearfix"></div>
                 <!-- Orders -->
-                <div class="orders">
+<!--                <div class="orders">
                     <div class="row">
                         <div class="col-xl-8">
                             <div class="card">
@@ -507,10 +547,10 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div> <!-- /.table-stats -->
+                                    </div>  /.table-stats 
                                 </div>
-                            </div> <!-- /.card -->
-                        </div>  <!-- /.col-lg-8 -->
+                            </div>  /.card 
+                        </div>   /.col-lg-8 
 
                         <div class="col-xl-4">
                             <div class="row">
@@ -521,7 +561,7 @@
                                                 <div id="flotPie1" class="float-chart"></div>
                                             </div>
                                         </div>
-                                    </div><!-- /.card -->
+                                    </div> /.card 
                                 </div>
 
                                 <div class="col-lg-6 col-xl-12">
@@ -535,12 +575,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> <!-- /.col-md-4 -->
+                        </div>  /.col-md-4 
                     </div>
                 </div>
-                <!-- /.orders -->
+                 /.orders -->
                 <!-- To Do and Live Chat -->
-                <div class="row">
+<!--                <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
@@ -594,10 +634,10 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div> <!-- /.todo-list -->
+                                    </div>  /.todo-list 
                                 </div>
-                            </div> <!-- /.card-body -->
-                        </div><!-- /.card -->
+                            </div>  /.card-body 
+                        </div> /.card 
                     </div>
 
                     <div class="col-lg-6">
@@ -623,7 +663,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><!-- /.msg-received -->
+                                                </div> /.msg-received 
                                             </li>
                                             <li>
                                                 <div class="msg-sent msg-container">
@@ -641,7 +681,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><!-- /.msg-sent -->
+                                                </div> /.msg-sent 
                                             </li>
                                         </ul>
                                         <div class="send-mgs">
@@ -652,24 +692,24 @@
                                                 <i class="pe-7s-paper-plane"></i>
                                             </button>
                                         </div>
-                                    </div><!-- /.messenger-box -->
+                                    </div> /.messenger-box 
                                 </div>
-                            </div> <!-- /.card-body -->
-                        </div><!-- /.card -->
+                            </div>  /.card-body 
+                        </div> /.card 
                     </div>
-                </div>
+                </div>-->
                 <!-- /To Do and Live Chat -->
                 <!-- Calender Chart Weather  -->
-                <div class="row">
+<!--                <div class="row">
                     <div class="col-md-12 col-lg-4">
                         <div class="card">
                             <div class="card-body">
-                                <!-- <h4 class="box-title">Chandler</h4> -->
+                                 <h4 class="box-title">Chandler</h4> 
                                 <div class="calender-cont widget-calender">
                                     <div id="calendar"></div>
                                 </div>
                             </div>
-                        </div><!-- /.card -->
+                        </div> /.card 
                     </div>
 
                     <div class="col-lg-4 col-md-6">
@@ -678,7 +718,7 @@
                                 <div id="flotBarChart" class="float-chart ml-4 mr-4"></div>
                             </div>
                             <div id="cellPaiChart" class="float-chart"></div>
-                        </div><!-- /.card -->
+                        </div> /.card 
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="card weather-box">
@@ -688,12 +728,12 @@
                                     <div id="weather-one" class="weather-one"></div>
                                 </div>
                             </div>
-                        </div><!-- /.card -->
+                        </div> /.card 
                     </div>
-                </div>
+                </div>-->
                 <!-- /Calender Chart Weather -->
                 <!-- Modal - Calendar - Add New Event -->
-                <div class="modal fade none-border" id="event-modal">
+<!--                <div class="modal fade none-border" id="event-modal">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -708,10 +748,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <!-- /#event-modal -->
                 <!-- Modal - Calendar - Add Category -->
-                <div class="modal fade none-border" id="add-category">
+<!--                <div class="modal fade none-border" id="add-category">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -739,13 +779,15 @@
                                     </div>
                                 </form>
                             </div>
+                           
+                            
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             <!-- /#add-category -->
             </div>
             <!-- .animated -->
@@ -753,7 +795,7 @@
         <!-- /.content -->
         <div class="clearfix"></div>
         <!-- Footer -->
-        <footer class="site-footer">
+        <footer class="site-footer" style="position: fixed; bottom:0;width: 100%">
             <div class="footer-inner bg-white">
                 <div class="row">
                   <!--  <div class="col-sm-6">

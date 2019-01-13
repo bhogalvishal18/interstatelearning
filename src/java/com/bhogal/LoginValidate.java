@@ -140,12 +140,13 @@ input.close();
         {
         String username = (String) jo.get("username"); 
         String session = (String) jo.get("session"); 
-        
+        String refer_code=(String)jo.get("refer_code");
        System.out.println("----"+result+"-----"+username+"----"+session+"----"+message);
  
 HttpSession sessions = request.getSession(false);
 sessions.setAttribute("session", session);
 sessions.setAttribute("username", username);
+sessions.setAttribute("refer_code",refer_code);
        response.sendRedirect("home");
         }
         else

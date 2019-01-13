@@ -23,7 +23,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Interstatelearning</title>
+    <title>Wisdommani</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -97,6 +97,7 @@
             HttpSession sessions = request.getSession(true);
             String user=(String)sessions.getAttribute("username");
             String sess=(String)sessions.getAttribute("session");
+            String refer_code=(String)sessions.getAttribute("refer_code");
             if(user==null&&sess==null)
             {
               response.sendRedirect("login");
@@ -133,6 +134,10 @@
                             <li><i class="fa fa-table"></i><a href="addbank">Add Bank Details</a></li>
                             <li><i class="fa fa-table"></i><a href="viewbank">View Bank Details</a></li>
                         </ul>
+                    </li>
+                    <li class="menu-item-has-children ">
+                        <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#staticModal" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-share"></i>Referral Code</a>
+                       
                     </li>
                    <!-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
@@ -321,6 +326,36 @@
         </div>
 
         <div class="content">
+              <!-- modelstart -->
+             <div class="animated">
+
+            <div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticModalLabel">Referral Code</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                            <center><b><%=refer_code %></b></center>
+                           </p>
+                       </div>
+                       <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+<!--                        <button type="button" class="btn btn-primary">Confirm</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div><!-- .animated -->
+    
+    <!-- modelbox end -->
             <div class="animated fadeIn">
 
 
@@ -371,7 +406,7 @@
                                         <div class="input-group-addon"><i class="fa fa-globe"></i></div>
 										
                                         <select name="country" data-placeholder="Choose a Country..." class="form-control" tabindex="1">
-                                <option value="" label="default">Choose a Country</option>
+                                <option value="" label="Country">Choose a Country</option>
                                 <option value="India">India</option>
                                
                             </select>

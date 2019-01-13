@@ -20,6 +20,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -85,6 +86,7 @@ public class RegisterValidate extends HttpServlet {
         String pass=request.getParameter("password");
         String email=request.getParameter("email");
         String account=request.getParameter("account_type");
+        String refer_code=request.getParameter("refer_code");
         if(user!=null &&pass!=null &&account!=null&&email!=null)        
         {
             System.out.println("----"+user+"----"+pass+"---"+account);
@@ -107,7 +109,7 @@ public class RegisterValidate extends HttpServlet {
           String url_path=baseurl+"/rest/user/register";
         System.out.println(url_path);
         
-        String urlParameters  = "username="+user+"&password="+pass+"&email="+email+"&account_type="+account;
+        String urlParameters  = "username="+user+"&password="+pass+"&email="+email+"&account_type="+account+"&refer_code="+refer_code;
 byte[] postData       = urlParameters.getBytes(StandardCharsets.UTF_8 );
 int    postDataLength = postData.length;
 
@@ -146,19 +148,20 @@ input.close();
         {
         String username = (String) jo.get("username"); 
         String session = (String) jo.get("session"); 
-        
+        String refer=(String)jo.get("refer_code");
       // System.out.println("----"+result+"-----"+username+"----"+session+"----"+message);
        
-      request.setAttribute("username",username);
-   request.setAttribute("session",session);
-RequestDispatcher dispatcher = request.getRequestDispatcher("home");
-dispatcher.forward( request, response );
+     HttpSession sessions = request.getSession(false);
+sessions.setAttribute("session", session);
+sessions.setAttribute("username", username);
+sessions.setAttribute("refer_code", refer);
+ response.sendRedirect("home");
        
         }
         else
         {
            // System.out.println("Already Registered"); 
-              request.setAttribute("message",message);
+request.setAttribute("message",message);
 RequestDispatcher dispatcher = request.getRequestDispatcher("register");
 dispatcher.forward( request, response );
         }

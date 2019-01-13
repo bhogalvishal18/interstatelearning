@@ -114,6 +114,7 @@
 
 
     </style>
+    
 </head>
 
 <body>
@@ -137,7 +138,7 @@
                       <%
                     }
                     %>
-                <form name="register" action="registervalidate"  method="POST">
+                <form name="reg" action="registervalidate"  method="POST">
                     <div class="form-group">
                         <input class="form-control form-control-lg" id="username" name="username" type="text" placeholder="Username" autocomplete="off" required="">
                     </div>
@@ -150,7 +151,10 @@
                     
                 <div class="form-group">
                         <input class="form-control form-control-lg" id="account_type" name="account_type" type="hidden" value="user" required="">
-                    </div>     
+                    </div>
+                        <div class="form-group">
+                        <input class="form-control form-control-lg" id="refer_code" name="refer_code" type="text"  maxlength="10" placeholder="Referral Code">
+                    </div>
         
 <!--                    <div class="form-group">
                         <label class="custom-control custom-checkbox">
@@ -162,7 +166,7 @@
             </div>
             <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
-                    <a href="login.jnsp" class="footer-ldenk">Login</a></div>
+                    <a href="login" class="footer-ldenk">Login</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="#" class="footer-link">Forgot Password</a>
                 </div>
