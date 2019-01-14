@@ -41,6 +41,10 @@
         <jsp-file>/logout.jsp</jsp-file>
     </servlet>
     <servlet>
+        <servlet-name>ComingSoon</servlet-name>
+        <jsp-file>/comingsoon.jsp</jsp-file>
+    </servlet>
+    <servlet>
         <servlet-name>EditProfileDetail</servlet-name>
         <servlet-class>com.bhogal.EditProfileDetail</servlet-class>
     </servlet>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ComingSoon</servlet-name>
+        <url-pattern>/comingsoon</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditProfileDetail</servlet-name>

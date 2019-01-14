@@ -64,6 +64,8 @@
             String city="";
             String mobile_no="";
             String state="";
+            String kyc_type="";
+            String kyc_id="";
             
    // code to hit rest service of getprofile
    
@@ -129,8 +131,10 @@ input.close();
         city=(String)jo.get("city");
         mobile_no=(String)jo.get("mobile_no");
         state=(String)jo.get("state");
+        kyc_type=(String)jo.get("kyc_type");
+        kyc_id=(String)jo.get("kyc_id");
         
-        if(country==null&&pincode==null&&firstname==null&&lastname==null&&address==null&&city==null&&mobile_no==null&&state==null)
+        if(country==null&&pincode==null&&firstname==null&&lastname==null&&address==null&&city==null&&mobile_no==null&&state==null&&kyc_type==null&&kyc_id==null)
         {
           country="";
           pincode="";
@@ -140,6 +144,8 @@ input.close();
           city="";
           mobile_no="";
           state="";
+          kyc_type="";
+          kyc_id="";
         }
         }
         else
@@ -187,6 +193,15 @@ input.close();
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="addbank">Add Bank Details</a></li>
                             <li><i class="fa fa-table"></i><a href="viewbank">View Bank Details</a></li>
+                        </ul>
+                    </li>
+                   <li class="menu-item-has-children dropdown">
+                        <a href="comingsoon" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>My Courses</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-pencil"></i><a href="comingsoon">Government Exam</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">LKG-12<sup>th</sup>Tutorial</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Art</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Skill Development</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children ">
@@ -468,6 +483,12 @@ input.close();
                                     </li>
 									 <li class="list-group-item">
                                         <a href="#"> <i class="fa fa-mobile"></i> MobileNumber:<%=mobile_no %> </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#"> <i class="fa fa-pencil-square-o"></i> KYC Type:<%=kyc_type %> </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#"> <i class="fa fa-file-text-o"></i> KYC Number:<%=kyc_id %> </a>
                                     </li>
                                 </ul>
 

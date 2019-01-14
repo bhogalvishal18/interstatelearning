@@ -111,6 +111,15 @@
                             <li><i class="fa fa-table"></i><a href="viewbank">View Bank Details</a></li>
                         </ul>
                     </li>
+                     <li class="menu-item-has-children dropdown">
+                        <a href="comingsoon" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>My Courses</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-pencil"></i><a href="comingsoon">Government Exam</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">LKG-12<sup>th</sup>Tutorial</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Art</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Skill Development</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-item-has-children ">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#staticModal" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-share"></i>Referral Code</a>
                        

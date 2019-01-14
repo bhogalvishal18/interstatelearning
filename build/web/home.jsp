@@ -121,11 +121,20 @@
                         </ul>
                     </li>
                     
-                     
+                      <li class="menu-item-has-children dropdown">
+                        <a href="comingsoon" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>My Courses</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-pencil"></i><a href="comingsoon">Government Exam</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">LKG-12<sup>th</sup>Tutorial</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Art</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Skill Development</a></li>
+                        </ul>
+                    </li>
                      <li class="menu-item-has-children ">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#staticModal" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-share"></i>Referral Code</a>
                        
                     </li>
+                    
                      
                    <!-- <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
@@ -339,23 +348,23 @@
                         </div>
                     </div>
 
-                 <!--   <div class="col-lg-3 col-md-6">
+                   <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-2">
-                                        <i class="pe-7s-cart"></i>
+                                        <i class="pe-7s-like2"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">3435</span></div>
-                                            <div class="stat-heading">Sales</div>
+                                            <div class="stat-text"><span class="count">0</span></div>
+                                            <div class="stat-heading">Rewards</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>  -->
+                    </div>  
 
                  <!--   <div class="col-lg-3 col-md-6">
                         <div class="card">

@@ -1,4 +1,11 @@
 <%-- 
+    Document   : comingsoon
+    Created on : Jan 15, 2019, 12:07:37 AM
+    Author     : Vishal
+--%>
+
+
+<%-- 
     Document   : Home
     Created on : Jan 5, 2019, 12:54:25 PM
     Author     : Vishal
@@ -327,10 +334,15 @@
     <!-- modelbox end -->
             
             <!-- Animated -->
+         
             <div class="animated fadeIn">
                 <!-- Widgets  -->
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                       <div class="col-lg-12">
+                           <center><h1><strong>Coming Soon</strong></h1></center> 
+                
+            </div>
+<!--                    <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-five">
@@ -346,25 +358,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
-                   <div class="col-lg-3 col-md-6">
+                 <!--   <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-five">
                                     <div class="stat-icon dib flat-color-2">
-                                        <i class="pe-7s-like2"></i>
+                                        <i class="pe-7s-cart"></i>
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">0</span></div>
-                                            <div class="stat-heading">Rewards</div>
+                                            <div class="stat-text"><span class="count">3435</span></div>
+                                            <div class="stat-heading">Sales</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>  -->
 
                  <!--   <div class="col-lg-3 col-md-6">
                         <div class="card">
@@ -384,7 +396,7 @@
                         </div>
                     </div>   -->
 
-                    <div class="col-lg-3 col-md-6">
+<!--                    <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="stat-widget-five">
@@ -400,7 +412,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <!-- /Widgets -->
                 <!--  Traffic  -->

@@ -135,6 +135,15 @@
                             <li><i class="fa fa-table"></i><a href="viewbank">View Bank Details</a></li>
                         </ul>
                     </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="commingsoon" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>My Courses</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-pencil"></i><a href="commingsoon">Government Exam</a></li>
+                            <li><i class="fa fa-book"></i><a href="commingsoon">LKG-12<sup>th</sup>Tutorial</a></li>
+                            <li><i class="fa fa-book"></i><a href="commingsoon">Art</a></li>
+                            <li><i class="fa fa-book"></i><a href="commingsoon">Skill Development</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-item-has-children ">
                         <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#staticModal" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa  fa-share"></i>Referral Code</a>
                        
@@ -478,7 +487,27 @@
                                         <input type="text"     size="10"  name="mobile" placeholder="Mobile" class="numeric10 form-control">
                                     </div>
                                 </div>
-								
+                               <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-pencil-square-o"></i></div>
+										
+                                        <select name="kyc_type" data-placeholder="Choose a KYC type" class="form-control" tabindex="1" required="">
+                                <option value="" label="KYC Type">KYC Type</option>
+                                <option value="Adhaar Card">Adhaar Card</option>
+                               <option value="PAN Card">PAN Card</option>
+                               <option value="Driving License">Driving License</option>
+                               <option value="Voter ID">Voter ID</option>
+                            </select>
+                                    </div>
+                                </div>
+								   <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-file-text-o"></i></div>
+                                        <input type="text"name="kyc_id" placeholder="KYC ID" class="form-control" required="">
+                                    </div>
+                                </div>	
+                               
+                               
                                 <div class="form-actions form-group"><button type="submit" class="btn btn-success btn-sm">Submit</button></div>
                             </form>
                         </div>

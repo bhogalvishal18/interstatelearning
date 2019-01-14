@@ -91,7 +91,9 @@ public class EditProfileDetail extends HttpServlet {
         String city=request.getParameter("city");
         String pincode=request.getParameter("pincode");
         String mobile=request.getParameter("mobile");
-        System.err.println("---"+user+"---"+sess+"----"+firstname+"-----"+lastname+"----"+address+"----"+country);
+        String kyc_type=request.getParameter("kyc_type");
+        String kyc_id=request.getParameter("kyc_id");
+        //System.err.println("---"+user+"---"+sess+"----"+firstname+"-----"+lastname+"----"+address+"----"+country);
         if(user!=null)
         {
              String baseurl="";
@@ -110,11 +112,11 @@ public class EditProfileDetail extends HttpServlet {
       
           String url_path=baseurl+"/rest/user/updateprofile";
         System.out.println(url_path);
-String urlParameters  = "username="+user+"&session_id="+sess+"&firstname="+firstname+"&lastname="+lastname+"&address="+address+"&city="+city+"&state="+stateslist+"&country="+country+"&pincode="+pincode+"&mobile_no="+mobile;
+String urlParameters  = "username="+user+"&session_id="+sess+"&firstname="+firstname+"&lastname="+lastname+"&address="+address+"&city="+city+"&state="+stateslist+"&country="+country+"&pincode="+pincode+"&mobile_no="+mobile+"&kyc_type="+kyc_type+"&kyc_id="+kyc_id;
 byte[] postData       = urlParameters.getBytes(StandardCharsets.UTF_8 );
 int    postDataLength = postData.length;
 
-URL    url            = new URL( url_path );
+URL    url = new URL( url_path );
 HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
 conn.setDoOutput( true );
 conn.setInstanceFollowRedirects( false );
@@ -150,7 +152,7 @@ input.close();
 HttpSession sessions = request.getSession(false);
 sessions.setAttribute("session", sess);
 sessions.setAttribute("username", username);
-       response.sendRedirect("viewprofile");
+response.sendRedirect("viewprofile");
         }
         else
         {
