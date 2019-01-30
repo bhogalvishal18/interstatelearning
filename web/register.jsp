@@ -33,6 +33,21 @@
         padding-top: 40px;
         padding-bottom: 40px;
     }
+    
+    /* When the pattern is matched */
+input[type="text"]:valid {
+    color: green;
+}
+
+input[type="text"]:valid ~ .valid::before {
+    content: "\2713";
+    color: green;
+}
+
+/* Unmatched */
+input[type="text"]:invalid {
+    color: red;
+}
     </style>
 	 <style>
        
@@ -114,7 +129,127 @@
 
 
     </style>
+    <script>
+        
+        function sendotp()
+        {
+            
+           var x = document.getElementById("mobile_no").value;
+           var addinput = document.getElementById('input');
+           var d=document.getElementById("otp");
+           
+           if(d!=null)
+           {
+             document.getElementById("otp").remove();  
+           }
+           else
+           {
+           
+           
+  if(x.length==10)
+  {
+      
+      var data = "mobile_no="+x;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+     var myObj = JSON.parse(this.responseText);
+     var res=myObj.result;
+     if(res=="true")
+     {
+       
+                 
+
+var i = document.createElement("input"); //input element, text
+i.setAttribute('type',"text");
+i.setAttribute('class',"form-control form-control-lg");
+i.setAttribute('name',"otp");
+i.setAttribute('oninput',"validateotp()")
+i.setAttribute('placeholder',"Enter OTP");
+i.setAttribute('id',"otp");
+addinput.appendChild(i);
+
+
+         
+     }else
+     {
+         document.getElementById("otp").remove();
+         
+   
+     }
+     // end
+  }
+});
+
+xhr.open("POST", "http://localhost:8084/ChainManagement/rest/user/send_otp");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.send(data);
+      
+      
+      
+  } 
+           }  }
+        
+        function validateotp()
+        {
+           var otp = document.getElementById("otp").value; 
+           var mobile = document.getElementById("mobile_no").value;
+           var addinput = document.getElementById('input');
+  if(otp.length=4)
+  {
+      
+      var data = "mobile_no="+mobile+"&otp="+otp;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+     var myObj = JSON.parse(this.responseText);
+     var res=myObj.result;
+     if(res=="true")
+     {
+       
+      document.getElementById("otp").remove();           
+
+var i = document.createElement("p");
+i.setAttribute('align',"center");
+var font=document.createElement("font");
+font.setAttribute('size','3');
+font.setAttribute('color','green');//input element, text
+var node=document.createTextNode("OTP validated ✓");
+font.appendChild(node);
+i.appendChild(font);
+addinput.appendChild(i);
+var register=document.getElementById("submit");
+  register.disabled = false;
+         
+     }else
+     {
+       var register=document.getElementById("submit");
+  register.disabled = true;  
+   
+     }
+     // end
+  }
+});
+
+xhr.open("POST", "http://localhost:8084/ChainManagement/rest/user/validate_otp");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.send(data);
+      
+      
+      
+  }   }
+        
+        
     
+    </script>
 </head>
 
 <body>
@@ -155,13 +290,13 @@
                         <div class="form-group">
                         <input class="form-control form-control-lg" id="refer_code" name="refer_code" type="text"  maxlength="10" placeholder="Referral Code">
                     </div>
-        
-<!--                    <div class="form-group">
-                        <label class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
-                        </label>
-                    </div>-->
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                    <div class="form-group valid">
+                        <input class="form-control form-control-lg"  pattern="[0-9]{10}" id="mobile_no" name="mobile_no" type="text" oninput="sendotp()" maxlength="10" placeholder="Mobile Number" autofocus required />
+                    </div>
+                      <div class="form-group" id="input">
+                                    </div>
+            
+                    <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block" disabled>Register</button>
                 </form>
             </div>
             <div class="card-footer bg-white p-0  ">

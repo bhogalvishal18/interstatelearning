@@ -85,6 +85,7 @@ public class RegisterValidate extends HttpServlet {
          String user=request.getParameter("username");
         String pass=request.getParameter("password");
         String email=request.getParameter("email");
+        String mobile_no=request.getParameter("mobile_no");
         String account=request.getParameter("account_type");
         String refer_code=request.getParameter("refer_code");
         if(user!=null &&pass!=null &&account!=null&&email!=null)        
@@ -109,7 +110,7 @@ public class RegisterValidate extends HttpServlet {
           String url_path=baseurl+"/rest/user/register";
         System.out.println(url_path);
         
-        String urlParameters  = "username="+user+"&password="+pass+"&email="+email+"&account_type="+account+"&refer_code="+refer_code;
+        String urlParameters  = "username="+user+"&password="+pass+"&email="+email+"&mobile_no="+mobile_no+"&account_type="+account+"&refer_code="+refer_code;
 byte[] postData       = urlParameters.getBytes(StandardCharsets.UTF_8 );
 int    postDataLength = postData.length;
 
