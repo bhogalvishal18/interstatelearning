@@ -128,7 +128,7 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="/"><img class="logo-img" src="source/images/company.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><a href="/"><img class="logo-img" src="assets/img/art.png"  data-src-retina="assets/img/art.png" width="65%" height="65%" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
                 <%
                     String message=(String)request.getAttribute("message");

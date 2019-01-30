@@ -136,12 +136,12 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="commingsoon" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>My Courses</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-book"></i>My Courses</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-pencil"></i><a href="commingsoon">Government Exam</a></li>
-                            <li><i class="fa fa-book"></i><a href="commingsoon">LKG-12<sup>th</sup>Tutorial</a></li>
-                            <li><i class="fa fa-book"></i><a href="commingsoon">Art</a></li>
-                            <li><i class="fa fa-book"></i><a href="commingsoon">Skill Development</a></li>
+                            <li><i class="fa fa-pencil"></i><a href="comingsoon">Government Exam</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">LKG-12<sup>th</sup>Tutorial</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Art</a></li>
+                            <li><i class="fa fa-book"></i><a href="comingsoon">Skill Development</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children ">
@@ -207,9 +207,9 @@
         <!-- Header-->
         <header id="header" class="header">
             <div class="top-left">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="assets/img/art.png" width="45%" height="45%" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="assets/img/art.png" width="45%" height="45%" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>

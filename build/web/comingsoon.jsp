@@ -199,8 +199,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand" href="./"><img src="assets/img/art.png" width="45%" height="45%" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="assets/img/art.png" width="45%" height="45%" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
@@ -340,6 +340,10 @@
                 <div class="row">
                        <div class="col-lg-12">
                            <center><h1><strong>Coming Soon</strong></h1></center> 
+                           <br>
+                           <center><p><strong>Only Government Exam preparation link is available right now.<br>
+                                       click on the link below and start preparing for the exam. </strong></p></center> 
+                           <center><a href="http://www.elearningedu.in" target="_blank">www.elearningedu.in</a></center>
                 
             </div>
 <!--                    <div class="col-lg-3 col-md-6">

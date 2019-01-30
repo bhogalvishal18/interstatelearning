@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Vishal/Documents/NetBeansProjects/interstatelearning/web/home.jsp</file>
-            <file>file:/C:/Users/Vishal/Documents/NetBeansProjects/interstatelearning/src/java/property/URL.properties</file>
-            <file>file:/C:/Users/Vishal/Documents/NetBeansProjects/interstatelearning/web/editprofile.jsp</file>
-            <file>file:/C:/Users/Vishal/Documents/NetBeansProjects/interstatelearning/src/java/com/bhogal/EditProfileDetail.java</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/register.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/index.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/assets/css/style.css</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/editprofile.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/addbank.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/home.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/viewprofile.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/login.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/viewbank.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/web/comingsoon.jsp</file>
+            <file>file:/C:/Users/Mayank/Documents/NetBeansProjects/interstatelearning/src/java/com/bhogal/RegisterValidate.java</file>
         </group>
     </open-files>
 </project-private>

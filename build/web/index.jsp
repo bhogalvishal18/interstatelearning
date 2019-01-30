@@ -54,14 +54,14 @@
                                     class="icon-bar"></span><span class="icon-bar"></span>
                             </button>
                             <a href="#" class="navbar-brand compressed">
-                                <img src="assets/img/company.png" alt="" data-src="assets/img/company.png"
-                                    data-src-retina="assets/img/comapany.png" width="119" height="45" /></a>
+                                <img src="assets/img/art.png" alt="" data-src="assets/img/art.png"
+                                    data-src-retina="assets/img/art.png" width="180" height="59" /></a>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">Tour</a></li>
-                                <li><a href="#">Pricing</a></li>
+                              <!--  <li><a href="#">Tour</a></li>  
+                                <li><a href="#">Pricing</a></li>-->
                                 <li><a href="login">Login</a></li>
 				<li><a href="register">Register</a></li>
                                 <li><a href="#">Contact</a></li>
@@ -83,13 +83,13 @@
                                     class="icon-bar"></span><span class="icon-bar"></span>
                             </button>
                             <a href="#" class="navbar-brand">
-                                <img src="assets/img/logo.png" data-src="assets/img/company.png" data-src-retina="assets/img/company.png"
-                                    width="119" height="75" alt="" /></a>
+                                <img src="assets/img/art.png" data-src="assets/img/art.png" data-src-retina="assets/img/art.png"
+                                    width="180" height="59" alt="" /></a>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#">Home</a></li>
-                                <li><a href="#">Tour</a></li>
+                               <!-- <li><a href="#">Tour</a></li>  -->
                               <li><a href="login">Login</a></li>
 				 <li><a href="register">Register</a></li>
                                 <li><a href="#">Contact</a></li>
@@ -106,64 +106,63 @@
                         <!-- SLIDE  -->
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="700">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/img/bg/slide_one.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center"
+                            <img src="assets/img/bg/1.png" alt="slidebg1" data-bgfit="cover" data-bgposition="center center"
                                 data-bgrepeat="no-repeat">
                             <!-- LAYERS -->
                             <div class="tp-caption mediumlarge_light_white_center sft tp-resizeme slider" data-x="center"
                                 data-hoffset="0" data-y="80" data-speed="500" data-start="800" data-easing="Power4.easeOut"
                                 data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <h2 class="text-white custom-font title ">
-                                    We Create<br>
-                                    Brands & Marketing
-                                    <br />
-                                    Strategies for Customers</h2>
+                              <!--  <h2 class="text-white custom-font title ">
+                                    We Deals with<br>
+                                    Education & E-commerce
+                                   </h2>  -->
                             </div>
                             <div class="tp-caption sfb slider tp-resizeme slider" data-x="center" data-hoffset="0"
                                 data-y="320" data-speed="800" data-start="1000" data-easing="Power4.easeOut"
                                 data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <a href="#" class="btn btn-info btn-lg  btn-large m-r-10">Download Template Now</a>
+                              <!--  <a href="#" class="btn btn-info btn-lg  btn-large m-r-10">Download Template Now</a>  -->
                             </div>
                         </li>
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="700">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/img/bg/picture-1.jpg" alt="slidebg2" data-bgfit="cover" data-bgposition="center center"
+                            <img src="assets/img/bg/2.jpg" alt="slidebg2" data-bgfit="cover" data-bgposition="center center"
                                 data-bgrepeat="no-repeat">
                             <!-- LAYERS -->
                             <div class="tp-caption mediumlarge_light_white_center sft tp-resizeme slider" data-x="center"
                                 data-hoffset="0" data-y="120" data-speed="500" data-start="800" data-easing="Power4.easeOut"
                                 data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <h2 class="text-white custom-font title ">
+                              <!--  <h2 class="text-white custom-font title ">
                                     We Craft<br>
-                                    Our Work to Last Perfection!</h2>
+                                    Our Work to Last Perfection!</h2>  -->
                             </div>
                             <div class="tp-caption sfb slider tp-resizeme slider" data-x="center" data-hoffset="0"
                                 data-y="300" data-speed="800" data-start="1000" data-easing="Power4.easeOut"
                                 data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <a href="#" class="btn btn-info btn-lg  btn-large m-r-10">Know More About Us</a>
+                               <!-- <a href="#" class="btn btn-info btn-lg  btn-large m-r-10">Know More About Us</a>  -->
                             </div>
                             <div class="tp-caption fade slider tp-resizeme slider" data-x="center" data-hoffset="0"
                                 data-y="360" data-speed="500" data-start="800" data-easing="Power4.easeOut" data-endspeed="300"
                                 data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <a href="#" class="text-white m-r-10">or view our pricing</a>
+                             <!--   <a href="#" class="text-white m-r-10">or view our pricing</a>  -->
                             </div>
                         </li>
                         <!-- SLIDE  -->
                         <li data-transition="fade" data-slotamount="5" data-masterspeed="700">
                             <!-- MAIN IMAGE -->
-                            <img src="assets/img/bg/picture-2.jpg" alt="slidebg2" data-bgfit="cover" data-bgposition="center center"
+                            <img src="assets/img/bg/3.jpg" alt="slidebg2" data-bgfit="cover" data-bgposition="center center"
                                 data-bgrepeat="no-repeat">
                             <!-- LAYERS -->
                             <div class="tp-caption mediumlarge_light_white_center sft tp-resizeme slider" data-x="center"
                                 data-hoffset="0" data-y="120" data-speed="500" data-start="800" data-easing="Power4.easeOut"
                                 data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <h2 class="text-white custom-font title ">
+                               <!-- <h2 class="text-white custom-font title ">
                                     We Build the Trust<br>
-                                    That Our Clients Needs</h2>
+                                    That Our Clients Needs</h2>  -->
                             </div>
                             <div class="tp-caption sfb slider tp-resizeme slider" data-x="center" data-hoffset="0"
                                 data-y="300" data-speed="800" data-start="1000" data-easing="Power4.easeOut"
                                 data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off" style="z-index: 6">
-                                <a href="#" class="btn btn-info btn-lg  btn-large m-r-10">Download Now</a>
+                              <!--  <a href="#" class="btn btn-info btn-lg  btn-large m-r-10">Download Now</a> -->
                             </div>
                         </li>
                     </ul>
@@ -180,7 +179,7 @@
                 <div class="p-t-40 p-b-40  text-center">
                     <h2 class="text-center">
                         We Provide Awesome Digital Solutions With a Great Attention to Details.</h2>
-                    <a href="#" class="btn btn-primary btn-lg  btn-large m-r-10">DOWNLOAD NOW</a>
+                    <!--<a href="#" class="btn btn-primary btn-lg  btn-large m-r-10">DOWNLOAD NOW</a>-->
                 </div>
             </div>
         </div>
@@ -190,30 +189,29 @@
                     <div class="row">
                         <div class="col-md-12 feature-list ">
                             <div class="col-md-4 " data-ride="animated" data-animation="fadeIn" data-delay="300">
-                                <i class="fa fa-archive fa-4x"></i>
+                                <i class="fa fa-book fa-4x"></i>
                                 <h4 class="title">
-                                    WEB DESIGN</h4>
+                                    EDUCATION COURSES</h4>
                                 <p>
-                                    Intriguing web designs and fascinating results, makes you happy and earns us a loyal
-                                    customer – Always there, looking after you!
+                                   This course is designed for students interested in taking online college courses 
+                                   and/or becoming more successful online college students.
                                 </p>
                             </div>
                             <div class="col-md-4" data-ride="animated" data-animation="fadeIn" data-delay="600">
-                                <i class="fa fa-cog fa-4x"></i>
+                                <i class="fa fa-pencil-square fa-4x"></i>
                                 <h4 class="title">
-                                    CUSTOMIZATION</h4>
+                                    GOVERNMENT EXAMS</h4>
                                 <p>
-                                    We push. We make you nervous. We get results. Let's get to work. Whenever you need,
-                                    you will find always there, looking after you!
+                                   To be the leader in the development of industry oriented quality education and training and be the country's premier Institution for examination and certification in the field of Information, Electronics and Communications Technology (IECT).
+                                   Provide online exam materials for study.
                                 </p>
                             </div>
                             <div class="col-md-4" data-ride="animated" data-animation="fadeIn" data-delay="900">
-                                <i class="fa fa-share fa-4x"></i>
+                                <i class="fa fa-ambulance fa-4x"></i>
                                 <h4 class="title">
-                                    SOCIAL</h4>
+                                    HOSPITAL CONNECT</h4>
                                 <p>
-                                    As your business flourishes, we grow as a business and so our team makes sure that
-                                    your growth is supported and we go hand in hand.
+                                    The value of patient care is the single most important factor of success for healthcare organizations transitioning to value-based care. Care coordination across delivery settings is one powerful way for ambulatory practices to increase that value by enhancing care quality, reducing cost of care, and improving patient satisfaction..
                                 </p>
                             </div>
                         </div>
@@ -222,48 +220,63 @@
                     <div class="row">
                         <div class="col-md-12 feature-list">
                             <div class="col-md-4 " data-ride="animated" data-animation="fadeIn" data-delay="1200">
-                                <i class="fa fa-code fa-4x"></i>
+                                <i class="fa fa-shopping-cart fa-4x"></i>
                                 <h4 class="title">
-                                    TEMPLATES</h4>
+                                    SHOPPING CART</h4>
                                 <p>
-                                    We work to deliver results, celebrate entrepreneurship, stand for justice, and believe
-                                    in the progress of common good.
+                                    All of us love to do online shopping as in this tech world who does not want to get his/her work done while sitting comfortably at home? Shopping and buying necessities have been made less time consuming, less expensive and much easier and comfortable for us by online e-commerce platforms
                                 </p>
                             </div>
                             <div class="col-md-4" data-ride="animated" data-animation="fadeIn" data-delay="1500">
-                                <i class="fa fa-asterisk fa-4x"></i>
+                                <i class="fa fa-credit-card fa-4x"></i>
                                 <h4 class="title">
-                                    BASED ON BOOTSTRAP 3</h4>
+                                    BILL PAYMENT & RECHARGE </h4>
                                 <p>
-                                    This free template is based on the popular Twitter Bootstrap Frameowrk. You can
-                                    easily customize if you have little Bootstrap 3 knowledge.
+                                    Pay all your bills across categories via Mobikwik in seconds and avoid late payment charges.
+                                    With money loaded in your wallet, it takes seconds to make phone and DTH recharges!
                                 </p>
                             </div>
                             <div class="col-md-4" data-ride="animated" data-animation="fadeIn" data-delay="1800">
+                                <i class="fa fa-plane  fa-4x"></i>
+                                <h4 class="title">
+                                    TOUR & TRAVELS</h4>
+                                <p>
+                                     offers best deals on tour packages. Book your perfect holiday package in India from a wide range of vacation packages and explore all exciting tourist places.
+                                </p>
+                            </div>
+                             <div class="col-md-4" data-ride="animated" data-animation="fadeIn" data-delay="2100">
+                                <i class="fa fa-money  fa-4x"></i>
+                                <h4 class="title">
+                                    REAL ESTATE</h4>
+                                <p>
+                                    Search Property in India's most trusted Real Estate Portal. Browse New projects, flats, ready to move apartments for sale.
+                                </p>
+                            </div>
+                           
+                             <div class="col-md-4" data-ride="animated" data-animation="fadeIn" data-delay="2400">
                                 <i class="fa fa-expand  fa-4x"></i>
                                 <h4 class="title">
-                                    RESPONSIVE DESIGN</h4>
+                                    NEWS</h4>
                                 <p>
-                                    Every project begins with a round of research and discovery. We dig through the
-                                    values, strategy, and organizational culture that make you unique.
+                                   We brings all the latest Latest news and top breaking news live . Read Latest news, current affairs and news headlines online today.
                                 </p>
                             </div>
                             <div class="clearfix">
                             </div>
                         </div>
                     </div>
-                    <div class="section relative">
+                   <!-- <div class="section relative">
                         <div class="row text-center">
                             <img src="assets/img/browser-shot.png" alt="" class="resize p-t-60 col-md-12 hidden-xs"
                                 style="" data-ride="animated" data-animation="fadeInUp" data-delay="300">
                         </div>
-                    </div>
+                    </div>  -->
                     <div class="clearfix">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section dark-grey">
+      <!--  <div class="section dark-grey">
             <div class="container">
                 <div class="p-t-80">
                     <div class="row">
@@ -289,7 +302,7 @@
                                 <!-- end team member -->
                             </div>
                             <!-- end col -->
-                            <div class="col-md-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s" style="visibility: visible;
+                           <!-- <div class="col-md-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s" style="visibility: visible;
                                 animation-duration: 2s; -webkit-animation-duration: 2s; animation-delay: 0.4s;
                                 -webkit-animation-delay: 0.4s; animation-name: fadeIn; -webkit-animation-name: fadeIn;">
                                 <div class="team-member mt-mdm-40">
@@ -308,9 +321,9 @@
                                     </div>
                                 </div>
                                 <!-- end team member -->
-                            </div>
+                       <!--     </div> -->
                             <!-- end col -->
-                            <div class="col-md-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s" style="visibility: visible;
+                          <!--  <div class="col-md-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s" style="visibility: visible;
                                 animation-duration: 2s; -webkit-animation-duration: 2s; animation-delay: 0.6s;
                                 -webkit-animation-delay: 0.6s; animation-name: fadeIn; -webkit-animation-name: fadeIn;">
                                 <div class="team-member mt-mdm-40">
@@ -327,18 +340,18 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>  -->
                                 <!-- end team member -->
-                            </div>
+                          <!--  </div>  -->
                             <!-- end col -->
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="section white">
             <div class="container">
-                <div class="p-t-60 p-b-50 ">
+             <!--   <div class="p-t-60 p-b-50 ">
                     <div class="row feature-list">
                         <div class="col-md-3 ">
                             <h4 class="custom-font title">
@@ -389,7 +402,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  -->
             </div>
         </div>
         <div class="section grey">
@@ -402,12 +415,13 @@
                                     <img src="assets/img/testimonial_img1.png" alt="testimonal">
                                 </div>
                                 <div class="testimonial-user">
-                                    <span>John Donga</span> Greepit.com
+                                    <span>Aditya Gond</span> 
                                 </div>
                                 <h3 class="normal text-center">
-                                    I have always received good service from the Frittt Templates. Timing and quality
-                                    have always met my expectations and everything is communicated in a professional
-                                    and timely manner.
+                                   We want to revolutionize the education sector and digitalization
+                                   We want to provide the economic based stability to customer
+                                   We will work better if everyone will join together
+                                   Thanks.
                                 </h3>
                             </div>
                         </div>
@@ -417,16 +431,18 @@
                                     <img src="assets/img/testimonial_img2.png" alt="testimonal">
                                 </div>
                                 <div class="testimonial-user">
-                                    <span>John Donga</span> Frittt.com
+                                    <span>Mayank Bhogal</span> Engineering Team
                                 </div>
                                 <h3 class="normal text-center">
-                                    We consider the Frittt Templates team a development partner who has proven to be
-                                    creative in problem resolution, reliable in time commitments, and overall consistent
-                                    in meeting our expectations.
+                                    We as a company want to grow and adapt digitalization to
+                                    make sure that future product can be build, Which can benefit &
+                                    transform the life of the individuals.
+                                    
+             
                                 </h3>
                             </div>
                         </div>
-                        <div class="item">
+                       <!-- <div class="item">
                             <div class="col-md-6   col-md-offset-3 text-center">
                                 <div class="testimonial-thumb">
                                     <img src="assets/img/testimonial_img3.png" alt="testimonal">
@@ -439,7 +455,7 @@
                                     the way around from start to finish. Keep up the GREAT work! Great job!
                                 </h3>
                             </div>
-                        </div>
+                        </div>  -->
                     </div>
                 </div>
             </div>
@@ -454,7 +470,7 @@
                                 <p>
                                     Phone</p>
                                 <h3>
-                                    +1 555 666 9999</h3>
+                                    +918000805018</h3>
                             </div>
                         </div>
                     </div>
@@ -465,7 +481,7 @@
                                 <p>
                                     E-mail</p>
                                 <h3>
-                                    letstalk@thempleite.com</h3>
+                                    eleindia2018@gmail.com</h3>
                             </div>
                         </div>
                     </div>
@@ -476,21 +492,21 @@
                                 <p>
                                     Postal</p>
                                 <h3>
-                                    32-Grey Suite, NY</h3>
+                                    Maharaj Ganj,UP</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 text-center">
                         <div class="services-box-3">
-                            <i class="fa fa-pinterest-square"></i>
+                            <i class="fa fa-briefcase"></i>
                             <div class="content">
                                 <p>
-                                    Pinterest</p>
+                                    Company</p>
                                 <h3>
-                                    pinterest.com/frittt</h3>
+                                    Mani E-learning Services Pvt. Ltd.</h3>
                             </div>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -499,34 +515,34 @@
                 <div class="p-t-30 p-b-50">
                     <div class="row">
                         <div class="col-md-2 col-lg-2 col-sm-2 col-xs-12 xs-m-b-20">
-                            <img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png"
-                                data-src-retina="assets/img/logo2x.png" width="119" height="22" />
+                          <!--  <img src="assets/img/logo_condensed.png" alt="" data-src="assets/img/logo_condensed.png"
+                                data-src-retina="assets/img/logo2x.png" width="119" height="22" />  -->
                             <br />
                             <br />
-                            © Frittt Templates.
+                            © Bhogal's Cooperation.
                             <br />
                             All Rights Reserved.
                         </div>
                         <div class="col-md-4 col-lg-3 col-sm-4  col-xs-12 xs-m-b-20">
-                            <address class="xs-no-padding  col-md-6 col-lg-6 col-sm-6  col-xs-12">
+                          <!--  <address class="xs-no-padding  col-md-6 col-lg-6 col-sm-6  col-xs-12">
                                 32 - Grey Suite<br>
                                 Odd Street,<br>
                                 NY, USA.
-                            </address>
+                            </address>  -->
                             <div class="xs-no-padding col-md-6 col-lg-6 col-sm-6">
                                 <div>
-                                    (1) 555 666 9999</div>
-                                <a href="javascript:">letstalk@thempleite.com</a>
+                                    *918755309939</div>
+                                <a href="javascript:">mayankbhogal29@gmail.com</a>
                             </div>
                             <div class="clearfix">
                             </div>
                         </div>
-                        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
+                     <!--   <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 xs-m-b-20">
                             <div class="bold">
                                 We Are Hiring</div>
                             Send you resume at <a href="javascript:">careers@thempleite.com</a>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 ">
+                        </div>  -->
+                     <!--   <div class="col-md-2 col-lg-2 col-sm-2  col-xs-12 ">
                             <div class="bold">
                                 FOLLOW US</div>
                             <br />
@@ -535,7 +551,7 @@
                                 </i></a>&nbsp; <a href="javascript:"><i class="fa fa-github fa-2x"></i></a>&nbsp;
                             <a href="javascript:"><i class="fa fa-dribbble fa-2x"></i></a>&nbsp; <a href="javascript:">
                                 <i class="fa fa-pinterest fa-2x"></i></a>
-                        </div>
+                        </div>  -->
                     </div>
                 </div>
             </div>
