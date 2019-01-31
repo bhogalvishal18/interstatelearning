@@ -4,6 +4,9 @@
     Author     : Vishal
 --%>
 
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.util.Properties"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!doctype html>
@@ -129,6 +132,22 @@ input[type="text"]:invalid {
 
 
     </style>
+    <% String baseurl=null;
+                       try
+              {
+     Properties prop = new Properties();
+     //name=prop.load(getClass().getResourceAsStream()); 
+     String path=this.getClass().getClassLoader().getResource("").getPath();
+     InputStream stream = new FileInputStream(path+"/property/URL.properties");
+     prop.load(stream);
+    baseurl=prop.getProperty("baseurl");
+    System.out.println(baseurl);
+              }catch(Exception e)
+              {
+                  
+              }
+        
+        %>
     <script>
         
         function sendotp()
@@ -185,7 +204,8 @@ addinput.appendChild(i);
   }
 });
 
-xhr.open("POST", "http://localhost:8084/ChainManagement/rest/user/send_otp");
+
+xhr.open("POST", "<%=baseurl%>/rest/user/send_otp");
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.send(data);
       
@@ -239,7 +259,7 @@ var register=document.getElementById("submit");
   }
 });
 
-xhr.open("POST", "http://localhost:8084/ChainManagement/rest/user/validate_otp");
+xhr.open("POST", "<%=baseurl%>/rest/user/validate_otp");
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.send(data);
       
