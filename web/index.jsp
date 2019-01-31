@@ -531,7 +531,7 @@
                             </address>  -->
                             <div class="xs-no-padding col-md-6 col-lg-6 col-sm-6">
                                 <div>
-                                    *918755309939</div>
+                                    +918755309939</div>
                                 <a href="javascript:">mayankbhogal29@gmail.com</a>
                             </div>
                             <div class="clearfix">
