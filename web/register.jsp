@@ -156,7 +156,6 @@ input[type="text"]:invalid {
            var x = document.getElementById("mobile_no").value;
            var addinput = document.getElementById('input');
            var d=document.getElementById("otp");
-           
            if(d!=null)
            {
              document.getElementById("otp").remove();  
@@ -219,7 +218,7 @@ xhr.send(data);
            var otp = document.getElementById("otp").value; 
            var mobile = document.getElementById("mobile_no").value;
            var addinput = document.getElementById('input');
-  if(otp.length=4)
+  if(otp.length==4)
   {
       
       var data = "mobile_no="+mobile+"&otp="+otp;
