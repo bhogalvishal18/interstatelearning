@@ -142,6 +142,12 @@ input.close();
         String session = (String) jo.get("session"); 
         String refer_code=(String)jo.get("refer_code");
        System.out.println("----"+result+"-----"+username+"----"+session+"----"+message);
+       
+ // post request to chain service
+ 
+ 
+ 
+ 
  
 HttpSession sessions = request.getSession(false);
 sessions.setAttribute("session", session);
