@@ -4,6 +4,20 @@
     Author     : Vishal
 --%>
 
+<%@page import="org.json.JSONArray"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="java.util.Iterator"%>
+
+<%@page import="java.io.DataInputStream"%>
+<%@page import="java.io.DataOutputStream"%>
+<%@page import="java.net.HttpURLConnection"%>
+<%@page import="java.net.URL"%>
+<%@page import="java.nio.charset.StandardCharsets"%>
+<%@page import="java.util.HashMap"%>
+
+<%@page import="java.util.Properties"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.FileInputStream"%>
 <%@ page contentType="text/html;charset=UTF-8" session="false" %>
        
 
@@ -549,18 +563,114 @@ p {
                                 
                                 <!-- code for chain tree structure  -->
                                 <%
-                                    
+                                    Properties prop = new Properties();
+      
+       try
+       {
+     String path=this.getClass().getClassLoader().getResource("").getPath();
+     InputStream stream = new FileInputStream(path+"/property/URL.properties");
+     prop.load(stream);
+     String baseurl=prop.getProperty("baseurl");
+     
+      
+     HashMap newmap = new HashMap();
+     newmap.put(1, baseurl);
+      StringBuffer sb = new StringBuffer();
+   String url_path=baseurl+"/rest/user/getchain";
+        System.out.println(url_path);
+        
+        String urlParameters  = "username="+user+"&session_id="+sess;
+byte[] postData       = urlParameters.getBytes(StandardCharsets.UTF_8 );
+int    postDataLength = postData.length;
 
+URL    url            = new URL( url_path );
+HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
+conn.setDoOutput( true );
+conn.setInstanceFollowRedirects( false );
+conn.setRequestMethod( "POST" );
+conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
+conn.setRequestProperty( "charset", "utf-8");
+conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
+conn.setUseCaches( false );
+try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
+   wr.write( postData );
+}
+        DataInputStream input = new DataInputStream( conn.getInputStream() ); 
+
+
+
+for( int c = input.read(); c != -1; c = input.read() ) 
+sb.append((char)c ); 
+input.close(); 
+             String a=sb.toString();
+
+JSONObject obj = new JSONObject(a);
+String depth = obj.getString("depth");
+String result=obj.getString("result");
+JSONArray child = obj.getJSONArray("child");  
+JSONArray order = obj.getJSONArray("order"); 
+%>
+
+  <%
+if(result.equals("true"))
+{
+    String check="0";
+  int temp=0;
+  for (int i = 0; i < child.length(); i++)
+  {
+      JSONObject ch=child.getJSONObject(i);
+      String username=ch.getString("username");
+       String refer=ch.getString("refer_code");
+        String level=ch.getString("level");
+       String d_c= Integer.toString(order.getInt(i));
+      if(check.equals(d_c))
+      {
+          %>
+          <ul class="tree">
+<li>
+    <span><%=user%></span>
+    <ul>
+    
+        <%  
+      }else
+      {
+
+          check=d_c;
+
+      }
+      
+      
+  } 
+
+%>
+         
+</ul>
+ </li>
+</ul>
+<%
+}else
+{
+    
+}
+        // typecasting obj to JSONObject 
+       
+       
+       }catch(Exception e)
+       {
+        System.out.println("The exception of property file :"+e);   
+       }
 
 
 
                                     %>
-                                <ul class="tree">
+                              <!--  <ul class="tree">
 <li>
   <span>Root</span>
   <ul>
     <li>
       <span>Uncle</span>
+           
+
     </li>
     <li>
       <span>Parent</span>
@@ -609,7 +719,7 @@ p {
       </ul>
     </li>
   </li>
-</ul>
+</ul>   -->
                              <!-- chain ends -->
                             </div>
                    </div>
