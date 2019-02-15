@@ -4,6 +4,19 @@
     Author     : Vishal
 --%>
 
+
+
+
+<%@page import="com.bhogal.Write"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.nio.file.Paths"%>
+<%@page import="java.nio.file.Path"%>
+<%@page import="java.nio.file.Files"%>
+<%@page import="java.io.Writer"%>
+<%@page import="java.io.BufferedWriter"%>
+<%@page import="java.io.File"%>
+<%@page import="java.io.IOException"%>
+<%@page import="java.io.FileWriter"%>
 <%@page import="org.json.JSONArray"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="java.util.Iterator"%>
@@ -19,7 +32,7 @@
 <%@page import="java.io.InputStream"%>
 <%@page import="java.io.FileInputStream"%>
 <%@ page contentType="text/html;charset=UTF-8" session="false" %>
-       
+  
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -28,6 +41,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Wisdommani</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
@@ -50,7 +64,30 @@
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <style>
+      
+      .node {
+    cursor: pointer;
+}
+.node circle {
+    fill: #fff;
+    stroke: #ffbf00;
+    stroke-width: 1.5px;
+}
+.node text {
+    font: 10px sans-serif;
+}
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
 
+body {
+    overflow: hidden;
+}
+  </style> 
    <style>
     #weatherWidget .currentDesc {
         color: #ffffff!important;
@@ -225,21 +262,133 @@ p {
   margin-top: 2em;
 }
 </style>
-</head>
-
-<body>
-    <%
+ <%
+                        
             HttpSession sessions = request.getSession(true);
             String user=(String)sessions.getAttribute("username");
             String sess=(String)sessions.getAttribute("session");
             String refer_code=(String)sessions.getAttribute("refer_code");
             
+            
+                       
+            
+            
             if(user==null&&sess==null)
             {
               response.sendRedirect("login");
             }
-           
-            %>
+                       
+                       
+                                    Properties prop = new Properties();
+      
+       try
+       {
+     String path=this.getClass().getClassLoader().getResource("").getPath();
+     InputStream stream = new FileInputStream(path+"/property/URL.properties");
+     prop.load(stream);
+     String baseurl=prop.getProperty("baseurl");
+     %>
+    
+     <script>
+
+function getUnflatten(arr, parentid) {
+   
+  var output = []
+  for(const obj of arr) {
+    if(obj.parent_refer_code == parentid) {
+      var children = getUnflatten(arr, obj.refer_code)
+
+      if(children.length) {
+        obj.children = children
+      }
+      else
+      {
+          //obj.children=[]
+      }
+      output.push(obj)
+    }
+  }
+ //alert("vishal"+output);
+ // console.log(output);
+  return output;
+}
+
+
+var res;
+
+$.ajax({
+  type: 'POST',
+  async: false,
+  url: "<%=baseurl%>/rest/user/getchain",
+  data: "username=<%=user%>&session_id=<%=sess%>",
+  success: function(response) {
+      res = response;
+  
+ 
+    }
+
+});
+ console.log(res);
+  var myJSON = JSON.stringify(res); 
+myObj = JSON.parse(myJSON);
+//var myObj = JSON.parse(response);
+//console.log(myObj.result);
+var child=myObj.child;
+if(myObj.result=="true")
+    {
+      var user=myObj.name;
+        var parent=myObj.parent_refer_code;
+        var refer=myObj.refer_code;
+        console.log("inside aya");
+        var tree = getUnflatten(child,'<%=refer_code%>');
+       var treedata=JSON.stringify(tree);
+       
+      /// console.log(treedata);
+res="{\"name\":\""+user+"\",\"parent_refer_code\":\""+parent+"\",\"refer_code\":\""+refer+"\",\"children\":"+treedata+"}";
+      // alert(treedata);
+   // ajax call
+console.log(res);
+var data = {
+    user: "<%=user%>",
+    tree: res
+};
+
+$.ajax({
+    type: "POST",
+    url: "HandlingTree",
+    contentType: "application/json", // NOT dataType!
+    data: JSON.stringify(data),
+    success: function(response) {
+        // ...
+        
+        console.log("this is the response "+response);
+       
+    }
+});
+      
+      
+    }else
+    {
+        
+    }
+   
+ 
+     </script>
+
+      <%
+            
+
+        
+       }catch(Exception e)
+       {
+        System.out.println("The exception of property file :"+e);   
+       }
+      %>
+
+</head>
+
+<body>
+
     <!-- Left Panel -->
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -491,7 +640,7 @@ p {
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text">₹<span class="count">0</span></div>
+                                            <div class="stat-text"><span class="count">0</span></div>
                                             <div class="stat-heading">Total Earning</div>
                                         </div>
                                     </div>
@@ -560,166 +709,25 @@ p {
                     <div class="col-lg-12">
                    <div class="card">
                             <div class="card-body">
-                                
+                             <script type="text/javascript">
+    setTimeout(function(){ 
+
+      if (location.href.indexOf('reload')==-1)
+{
+   location.href=location.href+'?reload';
+  
+   
+   
+}
+    }, 4000); 
+
+</script>   
                                 <!-- code for chain tree structure  -->
-                                <%
-                                    Properties prop = new Properties();
-      
-       try
-       {
-     String path=this.getClass().getClassLoader().getResource("").getPath();
-     InputStream stream = new FileInputStream(path+"/property/URL.properties");
-     prop.load(stream);
-     String baseurl=prop.getProperty("baseurl");
-     
-      
-     HashMap newmap = new HashMap();
-     newmap.put(1, baseurl);
-      StringBuffer sb = new StringBuffer();
-   String url_path=baseurl+"/rest/user/getchain";
-        System.out.println(url_path);
-        
-        String urlParameters  = "username="+user+"&session_id="+sess;
-byte[] postData       = urlParameters.getBytes(StandardCharsets.UTF_8 );
-int    postDataLength = postData.length;
-
-URL    url            = new URL( url_path );
-HttpURLConnection conn= (HttpURLConnection) url.openConnection();           
-conn.setDoOutput( true );
-conn.setInstanceFollowRedirects( false );
-conn.setRequestMethod( "POST" );
-conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded"); 
-conn.setRequestProperty( "charset", "utf-8");
-conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
-conn.setUseCaches( false );
-try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
-   wr.write( postData );
-}
-        DataInputStream input = new DataInputStream( conn.getInputStream() ); 
-
-
-
-for( int c = input.read(); c != -1; c = input.read() ) 
-sb.append((char)c ); 
-input.close(); 
-             String a=sb.toString();
-
-JSONObject obj = new JSONObject(a);
-String depth = obj.getString("depth");
-String result=obj.getString("result");
-JSONArray child = obj.getJSONArray("child");  
-JSONArray order = obj.getJSONArray("order"); 
-%>
-
-  <%
-if(result.equals("true"))
-{
-    String check="0";
-  int temp=0;
-  for (int i = 0; i < child.length(); i++)
-  {
-      JSONObject ch=child.getJSONObject(i);
-      String username=ch.getString("username");
-       String refer=ch.getString("refer_code");
-        String level=ch.getString("level");
-       String d_c= Integer.toString(order.getInt(i));
-      if(check.equals(d_c))
-      {
-          %>
-          <ul class="tree">
-<li>
-    <span><%=user%></span>
-    <ul>
-    
-        <%  
-      }else
-      {
-
-          check=d_c;
-
-      }
-      
-      
-  } 
-
-%>
-         
-</ul>
- </li>
-</ul>
-<%
-}else
-{
-    
-}
-        // typecasting obj to JSONObject 
-       
-       
-       }catch(Exception e)
-       {
-        System.out.println("The exception of property file :"+e);   
-       }
-
-
-
-                                    %>
-                              <!--  <ul class="tree">
-<li>
-  <span>Root</span>
-  <ul>
-    <li>
-      <span>Uncle</span>
-           
-
-    </li>
-    <li>
-      <span>Parent</span>
-      <ul>
-        <li class="origin">
-          <span>This</span>
-          <ul>
-            <li>
-              <span>Child</span>
-            </li>
-            <li>
-              <span>Child</span>
-              <ul>
-                <li>
-                  <span>Grandchild</span>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <span>Brother</span>
-        </li>
-        <li>
-          <span>Sister with a really long name</span>
-          <ul>
-            <li>
-              <span>Niece</span>
-            </li>
-            <li>
-              <span>Nephew</span>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <span>Aunt</span>
-      <ul>
-        <li>
-          <span>Cousin</span>
-        </li>
-        <li>
-          <span>Cousin</span>
-        </li>
-      </ul>
-    </li>
-  </li>
-</ul>   -->
+                                     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<div style="overflow:scroll;" width=100%;  id="body"></div>
+  
+<script src="<%=user%>/chat.js" ></script>
+ 
                              <!-- chain ends -->
                             </div>
                    </div>

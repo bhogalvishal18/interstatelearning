@@ -4,19 +4,6 @@
     Author     : Vishal
 --%>
 
-
-
-
-<%@page import="com.bhogal.Write"%>
-<%@page import="java.io.PrintWriter"%>
-<%@page import="java.nio.file.Paths"%>
-<%@page import="java.nio.file.Path"%>
-<%@page import="java.nio.file.Files"%>
-<%@page import="java.io.Writer"%>
-<%@page import="java.io.BufferedWriter"%>
-<%@page import="java.io.File"%>
-<%@page import="java.io.IOException"%>
-<%@page import="java.io.FileWriter"%>
 <%@page import="org.json.JSONArray"%>
 <%@page import="org.json.JSONObject"%>
 <%@page import="java.util.Iterator"%>
@@ -32,7 +19,7 @@
 <%@page import="java.io.InputStream"%>
 <%@page import="java.io.FileInputStream"%>
 <%@ page contentType="text/html;charset=UTF-8" session="false" %>
-  
+       
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -41,7 +28,6 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Wisdommani</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
@@ -64,7 +50,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <style>
       
       .node {
@@ -72,7 +57,7 @@
 }
 .node circle {
     fill: #fff;
-    stroke: #ffbf00;
+    stroke: steelblue;
     stroke-width: 1.5px;
 }
 .node text {
@@ -332,7 +317,7 @@ $.ajax({
   var myJSON = JSON.stringify(res); 
 myObj = JSON.parse(myJSON);
 //var myObj = JSON.parse(response);
-//console.log(myObj.result);
+console.log(myObj.result);
 var child=myObj.child;
 if(myObj.result=="true")
     {
@@ -343,11 +328,11 @@ if(myObj.result=="true")
         var tree = getUnflatten(child,'<%=refer_code%>');
        var treedata=JSON.stringify(tree);
        
-      /// console.log(treedata);
-res="{\"name\":\""+user+"\",\"parent_refer_code\":\""+parent+"\",\"refer_code\":\""+refer+"\",\"children\":"+treedata+"}";
+
+res="{\"name\":\""+user+"\",\"parent_refer_code\":"+parent+",\"refer_code\":\""+refer+"\",\"children\":"+treedata+"}";
       // alert(treedata);
    // ajax call
-console.log(res);
+
 var data = {
     user: "<%=user%>",
     tree: res
@@ -360,7 +345,6 @@ $.ajax({
     data: JSON.stringify(data),
     success: function(response) {
         // ...
-        
         console.log("this is the response "+response);
        
     }
@@ -640,7 +624,7 @@ $.ajax({
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">0</span></div>
+                                            <div class="stat-text">?<span class="count">0</span></div>
                                             <div class="stat-heading">Total Earning</div>
                                         </div>
                                     </div>
@@ -709,22 +693,10 @@ $.ajax({
                     <div class="col-lg-12">
                    <div class="card">
                             <div class="card-body">
-                             <script type="text/javascript">
-    setTimeout(function(){ 
-
-      if (location.href.indexOf('reload')==-1)
-{
-   location.href=location.href+'?reload';
-  
-   
-   
-}
-    }, 4000); 
-
-</script>   
+                                
                                 <!-- code for chain tree structure  -->
                                      <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<div style="overflow:scroll;" width=100%;  id="body"></div>
+<div width=100%; height=100%; id="body"></div>
   
 <script src="<%=user%>/chat.js" ></script>
  
